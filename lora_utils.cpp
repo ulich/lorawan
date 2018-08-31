@@ -2,12 +2,8 @@
 
 #include <lmic.h>
 #include <hal/hal.h>
+#include "lora_credentials.h"
 #include "utils.h"
-
-static const u4_t DEVADDR = 0x10000000; // <-- please change
-static const String WRITE_KEY = "GQEKYVW13KBD9N1A"; //  <-- please change
-static const PROGMEM u1_t APPSKEY[16] = { 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; // <-- please change
-static const PROGMEM u1_t NWKSKEY[16] = { 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; // <-- please change
 
 const int MAX_PAYLOAD_SIZE = MAX_LEN_FRAME - 13; // Max. LMIC packet length minus 13 byte LoRa Header
 
