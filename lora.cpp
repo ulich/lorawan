@@ -1,4 +1,4 @@
-#include "lora_utils.h"
+#include "lora.h"
 
 #include <lmic.h>
 #include <hal/hal.h>

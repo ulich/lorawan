@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <lmic.h>
 #include "utils.h"
-#include "lora_utils.h"
+#include "lora.h"
 #include "thermistor.h"
 
 static osjob_t sendjob;

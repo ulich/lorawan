@@ -1,5 +1,5 @@
-#ifndef _LORA_UTILS_H_
-#define _LORA_UTILS_H_
+#ifndef _LORA_H_
+#define _LORA_H_
 
 #include <Arduino.h>
 
