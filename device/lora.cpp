@@ -75,14 +75,16 @@ void lora_send(payload_type* types, lora_payload *fields) {
         }
     }
 
+    Serial.print("Send payload: ");
     PrintHex8(payload, payloadSize);
     if (payloadSize > MAX_PAYLOAD_SIZE) {
+        payloadSize = MAX_PAYLOAD_SIZE;
+        
         Serial.println("WARNING: Payload is too big! Please use different variable types in payload (or less variables).");
         Serial.print("Only the following will be sent: ");
-        payloadSize = MAX_PAYLOAD_SIZE;
+        PrintHex8(payload, payloadSize);
     }
 
-    PrintHex8(payload, payloadSize);
     LMIC_setTxData2(1, (uint8_t*) payload, payloadSize, 0);
 }
 
