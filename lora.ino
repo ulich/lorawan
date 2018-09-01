@@ -8,6 +8,7 @@
 #include <lmic.h>
 #include "utils.h"
 #include "lora_utils.h"
+#include "thermistor.h"
 
 static osjob_t sendjob;
 const unsigned TX_INTERVAL = 30;
@@ -40,21 +41,17 @@ void do_send(osjob_t* job) {
     lora_payload fields[LORA_FIELD_COUNT];
     lora_prepareTypes(types);
 
-
+    
     types[0] = PAYLOAD_TYPE_FLOAT;
-    fields[0].f = 19.3;
-
-    types[1] = PAYLOAD_TYPE_INT;
-    fields[1].i = 100;
-
-    types[2] = PAYLOAD_TYPE_INT;
-    fields[2].i = -13;
+    fields[0].f = thermistor_measureTemperature(A0);
 
 
     lora_send(types, fields);
 
     digitalWrite(LED_BUILTIN, HIGH);
 }
+
+
 
 
 void setup() {
