@@ -8,6 +8,7 @@
 
 #define TRANSMITTING_LED LED_3
 #define THERMISTOR_PORT A0
+#define PHOTOCELL_PORT A1
 
 static osjob_t sendjob;
 const unsigned TX_INTERVAL = 30;
@@ -40,6 +41,9 @@ void do_send(osjob_t* job) {
 
     types[0] = PAYLOAD_TYPE_FLOAT;
     fields[0].f = thermistor_measureTemperature(THERMISTOR_PORT);
+
+    types[1] = PAYLOAD_TYPE_INT;
+    fields[1].i = analogRead(PHOTOCELL_PORT);
 
     lora_send(types, fields);
 }
