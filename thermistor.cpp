@@ -1,6 +1,8 @@
 #import "thermistor.h"
 
 /**
+ * code based on http://edukit.thingsos.de/sketches/thermistor/
+ *
  * @param port e.g. A0, A1, ...
  */
 float thermistor_measureTemperature(uint32_t port) {

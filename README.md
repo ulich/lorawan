@@ -2,7 +2,7 @@
 
 Playing around with the [edu-kit](http://docs.edu-kit.de/) for the [HanseHack](https://hansehack.de/).
 
-Code is based on http://docs.edu-kit.de/lora/lorasketch/
+Code is based on all kind of sketches from http://docs.edu-kit.de/
 
 ## Getting started
 

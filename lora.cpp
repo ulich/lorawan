@@ -5,6 +5,8 @@
 #include "lora_credentials.h"
 #include "utils.h"
 
+// code based on http://edukit.thingsos.de/lora/lorasketch/
+
 const int MAX_PAYLOAD_SIZE = MAX_LEN_FRAME - 13; // Max. LMIC packet length minus 13 byte LoRa Header
 
 // Pin mapping
